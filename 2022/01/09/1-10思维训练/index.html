@@ -20,23 +20,23 @@
   <meta content="naoyu" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1641791405354" as="style">
+  <link rel="preload" href="/css/style.css?time=1641802344004" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>1.10思维训练 - naoyu</title>
   <meta name="keywords" content="算法相关,codeforces,2022寒假集训,null">
-  <meta name="description" content="CodeForces 1373B CodeForces 118A CodeForces 875A        CodeForces 365B CodeForces 1253B CodeForces 1304C   CodeForces 1373B01挨着即可相消，01无法独立存在，故必能相消，故最终结果一定只留多的数字   达到最终稳定需要 $min(one,zero)&#x2F;2">
+  <meta name="description" content="CodeForces 1373B CodeForces 118A CodeForces 875A        CodeForces 365B CodeForces 1253B CodeForces 1304C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1.10思维训练">
 <meta property="og:url" content="http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/index.html">
 <meta property="og:site_name" content="naoyu">
-<meta property="og:description" content="CodeForces 1373B CodeForces 118A CodeForces 875A        CodeForces 365B CodeForces 1253B CodeForces 1304C   CodeForces 1373B01挨着即可相消，01无法独立存在，故必能相消，故最终结果一定只留多的数字   达到最终稳定需要 $min(one,zero)&#x2F;2">
+<meta property="og:description" content="CodeForces 1373B CodeForces 118A CodeForces 875A        CodeForces 365B CodeForces 1253B CodeForces 1304C">
 <meta property="og:locale">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-01-09T13:37:52.000Z">
-<meta property="article:modified_time" content="2022-01-09T13:42:44.032Z">
+<meta property="article:modified_time" content="2022-01-10T08:09:39.279Z">
 <meta property="article:author" content="yWeiLoc">
 <meta property="article:tag" content="算法相关">
 <meta property="article:tag" content="codeforces">
@@ -1696,8 +1696,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1641791405354" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1641791405354"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1641802344004" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1641802344004"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2495,9 +2495,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <span id="more"></span>
-
-<table>
+    <table>
 <thead>
 <tr>
 <th></th>
@@ -2521,6 +2519,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <td><a target="_blank" rel="noopener" href="https://vjudge.net/problem/CodeForces-1304C/origin">CodeForces 1304C</a></td>
 </tr>
 </tbody></table>
+<span id="more"></span>
+
 <h3 id="CodeForces-1373B"><a href="#CodeForces-1373B" class="headerlink" title="CodeForces 1373B"></a>CodeForces 1373B</h3><p>01挨着即可相消，01无法独立存在，故必能相消，故最终结果一定只留多的数字  </p>
 <p>达到最终稳定需要 $min(one,zero)/2$  次，先后手折腾</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">const</span> LL INFL = <span class="number">0x3f3f3f3f3f3f3f3f</span>; </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> num[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 01挨着即可相消，01无法独立存在，故必能相消，故最终结果一定只留多的数字</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,num+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> one = <span class="number">0</span> , zero = <span class="number">0</span> , len = <span class="built_in">strlen</span>(num+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(num[i] == <span class="string">&#x27;0&#x27;</span>)    zero += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span>    one += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( <span class="built_in">min</span>(one,zero)%<span class="number">2</span> )    <span class="built_in">puts</span>(<span class="string">&quot;DA&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">puts</span>(<span class="string">&quot;NET&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=t;i++) &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2586,10 +2586,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-09T13:42:44+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-01-10T08:09:39+00:00">
   <a class='notlink' href="/" onclick="return false;" title="Click me!" >
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jan 9, 2022</p>
+    <p>更新于：Jan 10, 2022</p>
   </a>
 </div>
 
@@ -2612,7 +2612,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary=
+
+
+
+
+
+
+
+
+CodeForces 1373B
+CodeForces 118A
+CodeForces 875A
+
+
+
+
+
+
+
+CodeForces 365B
+CodeForces 1253B
+CodeForces 1304C
+
+"
           
           >
           
@@ -2624,7 +2647,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary=
+
+
+
+
+
+
+
+
+CodeForces 1373B
+CodeForces 118A
+CodeForces 875A
+
+
+
+
+
+
+
+CodeForces 365B
+CodeForces 1253B
+CodeForces 1304C
+
+"
           
           >
           
@@ -2636,7 +2682,30 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/&title=1.10思维训练 - naoyu&summary=
+
+
+
+
+
+
+
+
+CodeForces 1373B
+CodeForces 118A
+CodeForces 875A
+
+
+
+
+
+
+
+CodeForces 365B
+CodeForces 1253B
+CodeForces 1304C
+
+"
           
           >
           
@@ -2668,6 +2737,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2022/01/10/%E5%89%8D%E7%BC%80%E5%92%8C/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>1.10 前缀和</p>
+          <p class='content'>ac代码如下，文字说明根据情况完善
+
+
+A - suan 数能被k整除的个数前缀和的预处理
+123456789101112131415161718192021222324252627282930...</p>
+        </a>
       
       
         <a class='next' href='/2022/01/09/hello-world/'>
@@ -2887,8 +2965,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641791405354')
-      volantis.js('/js/message.js?time=1641791405354', () => {
+      volantis.css('/css/message.css?time=1641802344004')
+      volantis.js('/js/message.js?time=1641802344004', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2933,8 +3011,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641791405354')
-      volantis.js('/js/message.js?time=1641791405354', () => {
+      volantis.css('/css/message.css?time=1641802344004')
+      volantis.js('/js/message.js?time=1641802344004', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2993,8 +3071,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1641791405354')
-      volantis.js('/js/message.js?time=1641791405354', () => {
+      volantis.css('/css/message.css?time=1641802344004')
+      volantis.js('/js/message.js?time=1641802344004', () => {
         hideMessage(done);
       });
     } else {
@@ -3137,7 +3215,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1641791405354')
+    volantis.js('/js/rightMenu.js?time=1641802344004')
   </script>
 
 
@@ -3250,19 +3328,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1641791405354")
+        volantis.js("/js/plugins/sites.js?time=1641802344004")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1641791405354")
+        volantis.js("/js/plugins/friends.js?time=1641802344004")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1641791405354")
+        volantis.js("/js/plugins/contributors.js?time=1641802344004")
       }
     
   };
@@ -3378,7 +3456,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1641791405354.js"></script>
+<script src="/js/app.js?time=1641802344004.js"></script>
 
 
 <!-- optional -->
@@ -3391,7 +3469,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1641791405354");
+    return volantis.js("/js/search/hexo.js?time=1641802344004");
   }
 
   function loadSearchService() {
@@ -3638,7 +3716,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"naoyu","url":"http://blog.naoyu.xyz/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yWeiLoc","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://blog.naoyu.xyz/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://blog.naoyu.xyz/","name":"naoyu"}},{"@type":"ListItem","position":2,"item":{"@id":"http://blog.naoyu.xyz/categories/2022寒假集训/","name":"2022寒假集训"}},{"@type":"ListItem","position":3,"item":{"@id":"http://blog.naoyu.xyz/2022/01/09/1-10思维训练/","name":"1.10思维训练"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1.10思维训练","description":"","datePublished":"2022-01-09T13:37:52.000Z","dateModified":"2022-01-09T13:42:44.032Z","inLanguage":"zh","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/"},"author":{"@type":"Person","name":"yWeiLoc","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://blog.naoyu.xyz/"},"publisher":{"@type":"Organization","name":"naoyu","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/","wordCount":0,"articleSection":"2022寒假集训","keywords":"算法相关,codeforces,2022寒假集训","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"naoyu","url":"http://blog.naoyu.xyz/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"yWeiLoc","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://blog.naoyu.xyz/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://blog.naoyu.xyz/","name":"naoyu"}},{"@type":"ListItem","position":2,"item":{"@id":"http://blog.naoyu.xyz/categories/2022寒假集训/","name":"2022寒假集训"}},{"@type":"ListItem","position":3,"item":{"@id":"http://blog.naoyu.xyz/2022/01/09/1-10思维训练/","name":"1.10思维训练"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"1.10思维训练","description":"\n\n\n\n\n\n\n\n\nCodeForces 1373B\nCodeForces 118A\nCodeForces 875A\n\n\n\n\n\n\n\nCodeForces 365B\nCodeForces 1253B\nCodeForces 1304C\n\n","datePublished":"2022-01-09T13:37:52.000Z","dateModified":"2022-01-10T08:09:39.279Z","inLanguage":"zh","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/"},"author":{"@type":"Person","name":"yWeiLoc","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://blog.naoyu.xyz/"},"publisher":{"@type":"Organization","name":"naoyu","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://blog.naoyu.xyz/2022/01/09/1-10%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/","wordCount":116,"articleSection":"2022寒假集训","keywords":"算法相关,codeforces,2022寒假集训","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
